@@ -19,6 +19,9 @@
     <type fullname="UnityEngine.Mesh" preserve="all" />
     <type fullname="UnityEngine.Shader" preserve="all" />
   </assembly>
+  <assembly fullname="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.MeshCollider" preserve="all" />
+  </assembly>
   <assembly fullname="Unity.Industrial.Forma.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="Unity.Industrial.Forma.Core.Variants.StaticBoolQueryNode" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Variants.VariantSet" preserve="all" />
