@@ -18,9 +18,21 @@
     <type fullname="UnityEngine.MeshFilter" preserve="all" />
     <type fullname="UnityEngine.Mesh" preserve="all" />
     <type fullname="UnityEngine.Shader" preserve="all" />
+    <type fullname="UnityEngine.LineRenderer" preserve="all" />
+    <type fullname="UnityEngine.Sprite" preserve="all" />
+    <type fullname="UnityEngine.RectTransform" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEngine.MeshCollider" preserve="all" />
+    <type fullname="UnityEngine.SphereCollider" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.UI.GraphicRaycaster" preserve="all" />
+    <type fullname="UnityEngine.UI.Image" preserve="all" />
+    <type fullname="UnityEngine.UI.LayoutElement" preserve="all" />
+    <type fullname="UnityEngine.UI.ContentSizeFitter" preserve="all" />
+    <type fullname="UnityEngine.UI.CanvasScaler" preserve="all" />
+    <type fullname="UnityEngine.UI.VerticalLayoutGroup" preserve="all" />
   </assembly>
   <assembly fullname="Unity.Industrial.Forma.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="Unity.Industrial.Forma.Core.Variants.StaticBoolQueryNode" preserve="all" />
@@ -28,12 +40,20 @@
     <type fullname="Unity.Industrial.Forma.Core.Variants.StaticMaterialQueryNode" preserve="all" />
     <type fullname="UnityEngine.Industrial.Configuring.Providers.ProductRuntimeUIData" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Products.ModelSet" preserve="all" />
+    <type fullname="Unity.Industrial.Forma.Staging.Hotspots.MeshHotspotView" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Variants.StaticListMaterialSlotQueryNode" preserve="all" />
+    <type fullname="Unity.Industrial.Forma.Staging.Hotspots.HotspotTriggerQuery" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Configuring.Configuration" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Products.Product" preserve="all" />
+    <type fullname="Unity.Industrial.Forma.Staging.Hotspots.ScaleRelativeToCamera" preserve="all" />
+    <type fullname="Unity.Industrial.Forma.Staging.Hotspots.CanvasHotspotView" preserve="all" />
+    <type fullname="Unity.Industrial.Forma.Staging.Hotspots.EmptyHotspotView" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Variants.VariantTable" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Pricing.ProductLocalPrice" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Variants.GameObjectVisibilityAssignment" preserve="all" />
+    <type fullname="Unity.Industrial.Forma.Staging.Hotspots.MeshClickHandler" preserve="all" />
+    <type fullname="Unity.Industrial.Forma.Staging.Hotspots.HotspotViewContainer" preserve="all" />
+    <type fullname="Unity.Industrial.Forma.Staging.Hotspots.HotspotDisplay" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Variants.MaterialAssignment" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.ContextCollection" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Context" preserve="all" />
@@ -42,9 +62,24 @@
     <type fullname="Unity.Industrial.Forma.Core.Variants.StaticListGameObjectQueryNode" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Variants.QueryResults" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Variants.Variant" preserve="all" />
+    <type fullname="Unity.Industrial.Forma.Staging.Hotspots.Hotspot" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Ruling.Rules" preserve="all" />
+    <type fullname="Unity.Industrial.Forma.Staging.Hotspots.CameraFacingBillboard" preserve="all" />
+    <type fullname="Unity.Industrial.Forma.Staging.Hotspots.HotspotAnnotation" preserve="all" />
+    <type fullname="Unity.Industrial.Forma.Staging.Hotspots.HotspotAnchor" preserve="all" />
+  </assembly>
+  <assembly fullname="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="TMPro.TMP_FontAsset" preserve="all" />
+    <type fullname="TMPro.TextMeshProUGUI" preserve="all" />
   </assembly>
   <assembly fullname="UnityEditor.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEditor.MonoScript" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Font" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.CanvasRenderer" preserve="all" />
+    <type fullname="UnityEngine.Canvas" preserve="all" />
   </assembly>
 </linker>
