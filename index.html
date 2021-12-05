@@ -7,9 +7,47 @@
     <title>Forma Sample Project</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+
+        <!-- Start Forma React -->
+
+        <link rel="stylesheet" href="TemplateData/forma-ui.css">
+        <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+    
+        <script>
+            const formaUI = {
+    
+                InitializeFormaEvents(forma) {
+                    this._configuratorEnabled = false;
+    
+                    forma.addEventListener(forma.configuratorEnabled, e => {
+                        console.log("forma.configuratorEnabled");
+                        this.initializeReactUI(forma);
+                        this._configuratorEnabled = true;
+                    });
+    
+                }
+            };
+        </script>
+    
+        <script type="module">
+            import { initializeReactUI } from './React/forma-react.js';
+            formaUI.initializeReactUI = initializeReactUI;
+        </script>
+    
+        <!-- End Forma React -->
+
+
   </head>
   <body class="dark">
     <div id="unity-container" class="unity-desktop">
+      
+      <!-- Start Forma React -->
+
+      <div id="ui-anchor"></div>
+      
+      <!-- End Forma React -->
+
       <canvas id="unity-canvas"></canvas>
     </div>
     <div id="loading-cover" style="display:none;">
@@ -27,9 +65,9 @@
       const buildUrl = "Build";
       const loaderUrl = buildUrl + "/UnityFormaSkidLoader.loader.js";
       const config = {
-        dataUrl: buildUrl + "/UnityFormaSkidLoader.data",
-        frameworkUrl: buildUrl + "/UnityFormaSkidLoader.framework.js",
-        codeUrl: buildUrl + "/UnityFormaSkidLoader.wasm",
+        dataUrl: buildUrl + "/UnityFormaSkidLoader.data.gz",
+        frameworkUrl: buildUrl + "/UnityFormaSkidLoader.framework.js.gz",
+        codeUrl: buildUrl + "/UnityFormaSkidLoader.wasm.gz",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Unity Technologies",
         productName: "Forma Sample Project",
@@ -73,6 +111,16 @@
           progressBarEmpty.style.display = "";
           progressBarFull.style.width = `${100 * progress}%`;
         }).then((unityInstance) => {
+          
+          // Start Forma React
+
+          forma = unityInstance.Module.forma;
+          formaUI.InitializeFormaEvents(forma);
+          console.log(forma);
+
+          // End Forma React
+
+
           loadingCover.style.display = "none";
           if (canFullscreen) {
             if (!hideFullScreenButton) {

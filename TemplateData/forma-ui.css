@@ -1,0 +1,466 @@
+﻿/*---------------
+    Variables
+---------------*/
+
+@font-face {
+    font-family: 'Inter';
+    src: url('Inter-Regular.ttf') format('truetype');
+}
+
+:root {
+    font-family: 'Inter', Fallback, sans-serif;
+
+    --title-text-size: 20px;
+    --normal-text-size: 14px;
+    --text-color: white;
+
+    --spacing-standard: 6px;
+    --spacing-medium: 8px;
+    --spacing-large: 12px;
+
+    --rounded-border-size: 16px;
+    --card-border-radius: 4px;
+
+    --unity-colors-highlight-background:#3A72B0;
+    --ui-background-color: rgba(0, 0, 0, 0.85);
+    --selected-toolbar-button-color: rgb(0, 0, 0);
+    --unselected-toolbar-button-color: rgb(51, 51, 51);
+
+    --minimum-center-container-size: 95px;
+    --navigation-height: 35px;
+    --toolbar-height: 44px;
+    --toolbar-button-size: 32px;
+    --menu-width: 300px;
+}
+
+/*---------------------------
+    Unity standard styling
+---------------------------*/
+
+.unity-text-element {
+    color: var(--text-color);
+}
+
+.unity-label {
+    flex: 0 0 auto;
+    margin-top: 0px;
+    padding-left: 1px;
+    padding-right: 2px;
+    white-space: nowrap;
+}
+
+/*-----------------------
+    Global components
+-----------------------*/
+
+.header-label{
+    font-size: var(--title-text-size);
+    font-weight: bold;
+    white-space: normal;
+    overflow: hidden;
+    flex-shrink: 1;
+    align-self: center;
+    padding: 0;
+}
+
+/*---------------------
+    Base containers
+---------------------*/
+
+.ui-container {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu-container {
+    pointer-events: auto;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    width: 300px;
+    height: auto;
+    background-color: var(--ui-background-color);
+    z-index: 1;
+}
+
+.top-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.middle-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-top: var(--spacing-medium);
+    padding-bottom: var(--spacing-medium);
+    min-height: var(--minimum-center-container-size);
+    width: 100%;
+}
+
+.vertical-scrollview::-webkit-scrollbar {
+    display: none;
+}
+
+.vertical-scrollview {
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.bottom-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/*--------------------
+    Loading screen
+--------------------*/
+
+.loading-screen {
+    pointer-events: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: var(--menu-width);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgba(0.5, 0.5, 0.5, 0.7);
+    z-index: 9999;
+}
+
+.loading-screen-text {
+    margin-top: 0.5rem;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/*--------------------
+    Overlay screen
+--------------------*/
+
+.overlay-screen {
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-grow: 1;
+    align-items: center;
+    top: 0;
+    left: 0;
+    color: white;
+    padding-bottom: var(--spacing-large);
+    z-index: 8000;
+}
+
+.total-price-label {
+    align-self: flex-end;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 40px;
+    text-align: center;
+    padding: var(--spacing-medium);
+    font-size: var(--normal-text-size);
+    border-radius: var(--rounded-border-size);
+    background-color: var(--ui-background-color);
+}
+
+/*------------
+    Header
+------------*/
+
+.header {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin-top: var(--spacing-large);
+    margin-left: var(--spacing-medium);
+    margin-right: var(--spacing-medium);
+    height: var(--navigation-height);
+    justify-content: space-between;
+}
+
+.header .navigation-button {
+    background-color: rgb(0,0,0);
+    font-size: var(--normal-text-size);
+    border-width: 0;
+    padding-left: 0;
+    padding-right: 0;
+    min-height: 35px;
+    min-width: 55px;
+    border-radius: 5px;
+}
+
+.header .navigation-header-text{
+    font-size: 16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    text-overflow: ellipsis;
+    text-align: center;
+    overflow: hidden;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.header .navigation-button:hover {
+    background-color: rgb(100, 100, 100);
+}
+
+/*----------------
+    Image card
+----------------*/
+
+.image-card {
+    position: relative;
+    width: 90%;
+    margin: var(--spacing-standard) auto var(--spacing-large);
+    border-radius: var(--card-border-radius);
+    background-color: #000000;
+    opacity: 1.0;
+}
+
+.image-card.disabled {
+    opacity: 0.6;
+}
+
+.image-card .selection-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100% - 4px);
+    width: calc(100% - 4px);
+    border-radius: var(--card-border-radius);
+}
+
+.image-card.selected .selection-border {
+    border-style: solid;
+    border-radius: var(--card-border-radius);
+    border-color: var(--unity-colors-highlight-background);
+}
+
+.image-card .card-thumbnail {
+    width: 100%;
+    padding-top: 75%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 0 0 var(--card-border-radius) var(--card-border-radius);
+    transform: scale(1, -1);
+}
+
+.image-card .title-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    height: 40px;
+    padding: 0 var(--spacing-standard);
+}
+
+.image-card .label-title {
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--text-color);
+}
+
+.image-card .price-label {
+    position: absolute;
+    left: 4px;
+    bottom: 44px;
+    padding: 2px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.image-card .card-list {
+    flex-grow: 1;
+}
+
+.image-card .card-arrow-image {
+    height: 12px;
+    width: 8px;
+    background-image: url("CaretDown.png");
+}
+
+/*-----------------------
+    Tab bar (toolbar)
+-----------------------*/
+
+.tab-bar-container{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    height: var(--toolbar-height);
+    padding-left: var(--spacing-large);
+    padding-right: var(--spacing-large);
+}
+
+.tab-bar-button {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    flex-grow: 1;
+    width: 48px;
+    height: 48px;
+    border-width: 0;
+    background-color: transparent;
+}
+
+.tab-bar-button .tab-bar-button-icon {
+    align-self: center;
+    height: var(--toolbar-button-size);
+    width: var(--toolbar-button-size);
+    opacity: 0.6;
+}
+
+.tab-bar-button .tab-bar-button-icon.selected {
+    opacity: 1.0;
+}
+
+/*--------------------
+    Fade animation
+--------------------*/
+
+.fade-out {
+    animation: fade 0.5s;
+    -webkit-animation: fade 0.5s;
+    -moz-animation: fade 0.5s;
+}
+
+/* Animate opacity */
+@keyframes fade {
+    from { opacity: 1 }
+    to { opacity: 0 }
+}
+@-moz-keyframes fade {
+    from { opacity: 1 }
+    to { opacity: 0 }
+}
+@-webkit-keyframes fade {
+    from { opacity: 1 }
+    to { opacity: 0 }
+}
+
+/*-------------------
+    Dropdown menu
+-------------------*/
+
+.renderstudio-dropdown {
+    flex-direction: column;
+    margin: 0;
+    padding: 4px 12px;
+}
+
+.renderstudio-dropdown > .renderstudio-dropdown__label {
+    margin-bottom: 4px;
+    font-size: 14px;
+    color: #C4C4C4;
+}
+
+.renderstudio-dropdown.no-label > .renderstudio-dropdown__label {
+    display: none;
+}
+
+.renderstudio-dropdown > .renderstudio-dropdown__input {
+    position: relative;
+    margin: 0;
+    flex-grow: 1;
+    height: 40px;
+    align-self: center;
+    border-radius: 4px;
+    background-color: rgb(46, 46, 46);
+    text-align: left;
+    vertical-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    font-size: 14px;
+    border-color: rgb(46, 46, 46);
+}
+
+.renderstudio-dropdown.no-label > .renderstudio-dropdown__input {
+    width: 100%;
+}
+
+.renderstudio-dropdown__input:hover {
+    background-color: rgb(41, 41, 41);
+}
+
+.renderstudio-dropdown__caret {
+    position: absolute;
+    top: 1px;
+    right: 0;
+    width: 32px;
+    height: 32px;
+    background-image: url('CaretFullDown.png');
+    pointer-events: none;
+}
+
+.renderstudio-dropdown__input:active {
+    background-color: rgb(32, 150, 243);
+}
+
+.renderstudio-dropdown__input:active {
+    background-color: rgb(32, 150, 243);
+}
+
+.renderstudio-dropdown__content-container {
+    position: absolute;
+    min-height: 20px;
+    background-color: rgb(46, 46, 46);
+    border-radius: 4px;
+    margin-top: 4px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.renderstudio-dropdown__backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.renderstudio-dropdown-item {
+    min-height: 40px;
+    align-items: center;
+    text-align: left;
+    flex-direction: row;
+    padding-left: 8px;
+    font-size: 14px;
+    background-color: transparent;
+    border: none;
+    width: 192px;
+}
+
+.renderstudio-dropdown-item > .renderstudio-dropdown-item__label {
+    color: #E4E4E4;
+}
+
+.renderstudio-dropdown-item:hover {
+    background-color: rgb(41, 41, 41);
+}
+
+.renderstudio-dropdown-item.selected {
+    background-color: rgb(32, 150, 243);
+}

@@ -3,7 +3,6 @@
     <type fullname="UnityEngine.AddressableAssets.Addressables" preserve="all" />
   </assembly>
   <assembly fullname="Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
-    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.LegacyResourcesProvider" preserve="all" />
     <type fullname="UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider" preserve="all" />
     <type fullname="UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider" preserve="all" />
     <type fullname="UnityEngine.ResourceManagement.ResourceProviders.InstanceProvider" preserve="all" />
@@ -12,6 +11,7 @@
   <assembly fullname="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEngine.GameObject" preserve="all" />
     <type fullname="UnityEngine.Transform" preserve="all" />
+    <type fullname="UnityEngine.Camera" preserve="all" />
     <type fullname="UnityEngine.Material" preserve="all" />
     <type fullname="UnityEngine.MeshRenderer" preserve="all" />
     <type fullname="UnityEngine.Texture2D" preserve="all" />
@@ -24,6 +24,7 @@
   </assembly>
   <assembly fullname="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="UnityEngine.MeshCollider" preserve="all" />
+    <type fullname="UnityEngine.BoxCollider" preserve="all" />
     <type fullname="UnityEngine.SphereCollider" preserve="all" />
   </assembly>
   <assembly fullname="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
@@ -33,6 +34,11 @@
     <type fullname="UnityEngine.UI.ContentSizeFitter" preserve="all" />
     <type fullname="UnityEngine.UI.CanvasScaler" preserve="all" />
     <type fullname="UnityEngine.UI.VerticalLayoutGroup" preserve="all" />
+  </assembly>
+  <assembly fullname="Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Rendering.Universal.DepthOfField" preserve="all" />
+    <type fullname="UnityEngine.Rendering.Universal.ColorAdjustments" preserve="all" />
+    <type fullname="UnityEngine.Rendering.Universal.Bloom" preserve="all" />
   </assembly>
   <assembly fullname="Unity.Industrial.Forma.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="Unity.Industrial.Forma.Core.Variants.StaticBoolQueryNode" preserve="all" />
@@ -44,29 +50,49 @@
     <type fullname="Unity.Industrial.Forma.Core.Variants.StaticListMaterialSlotQueryNode" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Staging.Hotspots.HotspotTriggerQuery" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Configuring.Configuration" preserve="all" />
+    <type fullname="Unity.Industrial.Forma.Staging.Cinemachine.CinemachineMultiLocations" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Products.Product" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Staging.Hotspots.ScaleRelativeToCamera" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Staging.Hotspots.CanvasHotspotView" preserve="all" />
+    <type fullname="Unity.Industrial.Forma.Staging.Camera.FormaCinemachineExtension" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Staging.Hotspots.EmptyHotspotView" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Variants.VariantTable" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Pricing.ProductLocalPrice" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Variants.GameObjectVisibilityAssignment" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Staging.Hotspots.MeshClickHandler" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Staging.Hotspots.HotspotViewContainer" preserve="all" />
+    <type fullname="Unity.Industrial.Forma.Staging.Camera.CameraItemCommandSettings" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Staging.Hotspots.HotspotDisplay" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Variants.MaterialAssignment" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.ContextCollection" preserve="all" />
+    <type fullname="Unity.Industrial.Forma.Staging.Cinemachine.CinemachineController" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Context" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Products.ProductSettings" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Products.ProductDefinition" preserve="all" />
+    <type fullname="Unity.Industrial.Forma.Staging.Cinemachine.CinemachineLocationWayPoints" preserve="all" />
+    <type fullname="Unity.Industrial.Forma.Staging.Camera.ActivateVirtualCameraCommand" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Variants.StaticListGameObjectQueryNode" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Variants.QueryResults" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Variants.Variant" preserve="all" />
+    <type fullname="Unity.Industrial.Forma.Staging.Camera.CameraItem" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Staging.Hotspots.Hotspot" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Ruling.Rules" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Staging.Hotspots.CameraFacingBillboard" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Staging.Hotspots.HotspotAnnotation" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Staging.Hotspots.HotspotAnchor" preserve="all" />
+    <type fullname="Unity.Industrial.Forma.Staging.Camera.CameraFollowObject" preserve="all" />
+  </assembly>
+  <assembly fullname="Cinemachine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Cinemachine.CinemachineCollider" preserve="all" />
+    <type fullname="Cinemachine.CinemachineVirtualCamera" preserve="all" />
+    <type fullname="Cinemachine.CinemachinePipeline" preserve="all" />
+    <type fullname="Cinemachine.CinemachineFramingTransposer" preserve="all" />
+    <type fullname="Cinemachine.CinemachinePOV" preserve="all" />
+    <type fullname="Cinemachine.PostFX.CinemachineVolumeSettings" preserve="all" />
+    <type fullname="Cinemachine.CinemachineStoryboard" preserve="all" />
+  </assembly>
+  <assembly fullname="Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Rendering.VolumeProfile" preserve="all" />
   </assembly>
   <assembly fullname="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="TMPro.TMP_FontAsset" preserve="all" />
