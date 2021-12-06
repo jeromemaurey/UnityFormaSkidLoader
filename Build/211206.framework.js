@@ -361,6 +361,8 @@ class Helpers {
         
         context.putImageData(imageData, 0, 0);
         
+        console.log(this.#canvas.toDataURL());
+        
         return this.#canvas.toDataURL();
     }
     
@@ -424,7 +426,10 @@ class DisplayInfo {
             return Helpers.generateDataURLFromTexturePointer(this.#textureRawPointer, this.#textureWidth, this.#textureHeight);
         }
         else
+        {
+            console.log("getThumbnail -> no Texture Pointer")
             return "";
+        }
     }
 
     get textureWidth() {
