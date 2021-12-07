@@ -401,12 +401,15 @@ class Helpers {
                     }`;
 
                 const fragmentShader = `
-                    precision mediump float;
-                    uniform sampler2D colorMap;
-                    varying vec2 vTexCoords;
-                    void main() {
-                        gl_FragColor = texture2D(colorMap, vTexCoords);
-                    }`;
+                precision mediump float;
+                uniform sampler2D colorMap;
+                varying vec2 vTexCoords;
+                void main() {
+                    vec4 c = texture2D(colorMap, vTexCoords);
+                    // Convert linear color space to sRGB
+                    c = mix(c * 12.92, pow(c, vec4(0.41666)) * 1.055 - vec4(0.055), step(vec4(0.003130), c));
+                        gl_FragColor = c;
+                }`;
                 const vs = GLctx.createShader(GLctx.VERTEX_SHADER);
                 GLctx.shaderSource(vs, vertexShader);
                 GLctx.compileShader(vs);
