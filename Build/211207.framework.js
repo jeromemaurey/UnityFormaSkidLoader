@@ -396,7 +396,7 @@ class Helpers {
                     varying vec2 vTexCoords;
                     const vec2 scale = vec2(2.0, 1.0);
                     void main() {
-                        vTexCoords = vertexPositionNDC * scale + scale;
+                        vTexCoords = (vertexPositionNDC + 1.0) * 0.5;
                         gl_Position = vec4(vertexPositionNDC, 0.0, 1.0);
                     }`;
 
