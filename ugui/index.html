@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Forma Sample Project</title>
+  </head>
+  <body style="text-align: center">
+    <canvas id="unity-canvas" width=1920 height=1080 style="width: 1920px; height: 1080px; background: #231F20"></canvas>
+    <script src="Build/211208_webgl_ugui.loader.js"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/211208_webgl_ugui.data",
+        frameworkUrl: "Build/211208_webgl_ugui.framework.js",
+        codeUrl: "Build/211208_webgl_ugui.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Unity Technologies",
+        productName: "Forma Sample Project",
+        productVersion: "1.0.0",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+    </script>
+  </body>
+</html>

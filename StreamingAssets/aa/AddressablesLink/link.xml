@@ -75,8 +75,8 @@
     <type fullname="Unity.Industrial.Forma.Core.Variants.QueryResults" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Variants.Variant" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Staging.Camera.CameraItem" preserve="all" />
-    <type fullname="Unity.Industrial.Forma.Staging.Hotspots.Hotspot" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Core.Ruling.Rules" preserve="all" />
+    <type fullname="Unity.Industrial.Forma.Staging.Hotspots.Hotspot" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Staging.Hotspots.CameraFacingBillboard" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Staging.Hotspots.HotspotAnnotation" preserve="all" />
     <type fullname="Unity.Industrial.Forma.Staging.Hotspots.HotspotAnchor" preserve="all" />
